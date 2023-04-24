@@ -22,8 +22,8 @@ local Window = Rayfield:CreateWindow({
        Note = "Get key from creator!",
        FileName = "FelineityKey", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
        SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = "https://raw.githubusercontent.com/GentlemanKitten/Felineity/main/Key.txt" -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"BetaTester"}-- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
     }
  })
 
@@ -33,14 +33,19 @@ local Window = Rayfield:CreateWindow({
 
  Sense.sharedSettings.useTeamColor = true
  Sense.teamSettings.enemy.enabled = true
+ Sense.teamSettings.enemy.box = true
  Sense.teamSettings.enemy.chams = true
+ Sense.teamSettings.enemy.healthBar = true
+ Sense.teamSettings.enemy.chamsOutlineColor = { "Team Color", 0 }
  Sense.teamSettings.friendly.enabled = true
+ Sense.teamSettings.friendly.box = true
  Sense.teamSettings.friendly.chams = true
+ Sense.teamSettings.friendly.healthBar = true
+ Sense.teamSettings.friendly.chamsOutlineColor = { "Team Color", 0 }
 
  local Toggle = Tab:CreateToggle({
    Name = "Enable",
    CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
       if Value == true then
          Sense.Load()
