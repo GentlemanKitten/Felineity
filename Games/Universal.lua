@@ -37,7 +37,7 @@ local Window = Rayfield:CreateWindow({
  Sense.teamSettings.friendly.enabled = true
  Sense.teamSettings.friendly.chams = true
 
- local Toggle = Section:CreateToggle({
+ local Toggle = Tab:CreateToggle({
    Name = "Enable",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
