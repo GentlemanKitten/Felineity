@@ -1,4 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Sense = loadstring(game:HttpGet('https://sirius.menu/sense'))()
 
 local Window = Rayfield:CreateWindow({
     Name = "Felineity | Universal",
@@ -25,3 +26,20 @@ local Window = Rayfield:CreateWindow({
        Key = "https://raw.githubusercontent.com/GentlemanKitten/Felineity/main/Key.txt" -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
     }
  })
+
+ local Tab = Window:CreateTab("Esp", 4483362458) -- Title, Image
+
+ local Section = Tab:CreateSection("Player Esp")
+
+ local Toggle = Tab:CreateToggle({
+   Name = "Enable",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      if Value == true then
+         Sense.Load()
+      else
+         Sense.Unload()
+      end
+   end,
+})
