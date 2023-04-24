@@ -31,6 +31,12 @@ local Window = Rayfield:CreateWindow({
 
  local Section = Tab:CreateSection("Player Esp")
 
+ Sense.sharedSettings.useTeamColor = true
+ Sense.teamSettings.enemy.enabled = true
+ Sense.teamSettings.enemy.chams = true
+ Sense.teamSettings.friendly.enabled = true
+ Sense.teamSettings.friendly.chams = true
+
  local Toggle = Tab:CreateToggle({
    Name = "Enable",
    CurrentValue = false,
